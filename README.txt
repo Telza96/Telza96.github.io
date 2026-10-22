@@ -27,13 +27,3 @@ The form now displays the actual FormSubmit error instead of a generic message a
 
 DEPLOYMENT NOTE
 The old static message about opening an email app has been removed. After replacing index.html and script.js on GitHub Pages, hard-refresh the site (Ctrl+F5). If submission fails, the form now displays the FormSubmit error response. Confirm recruiting@drivenfc.com with FormSubmit if prompted.
-
-
-HERO PHOTO SLIDESHOW (TEMPORARY PREVIEW IMAGES)
-The hero visual now cycles through three truck photos. Replace the three image src URLs in index.html with NFC's own truck photo URLs/files when ready. The per-slide data-tone value controls overlay text contrast: dark = white text, light = black text.
-
-Temporary photo credits / licenses:
-- Semi Truck.jpg — KOMUnews via Wikimedia Commons, CC BY 2.0: https://commons.wikimedia.org/wiki/File:Semi_Truck.jpg
-- A VOLVO truck tractor with a semi-trailer on the road in Levoča, Slovakia.jpg — Oto Zapletal via Wikimedia Commons, CC BY-SA 4.0: https://commons.wikimedia.org/wiki/File:A_VOLVO_truck_tractor_with_a_semi-trailer_on_the_road_in_Levo%C4%8Da,_Slovakia.jpg
-- Colorful Semi-Trucks.jpg — Thank You (21 Millions+) views via Wikimedia Commons, CC BY 2.0: https://commons.wikimedia.org/wiki/File:Colorful_Semi-Trucks.jpg
-These are temporary preview photos and do not represent NFC-owned trucks.

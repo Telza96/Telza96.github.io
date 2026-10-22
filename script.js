@@ -13,47 +13,6 @@
   const year = document.querySelector('#year');
   if (year) year.textContent = new Date().getFullYear();
 
-  // Accessible hero photo slideshow. Tone is set per photo so the overlay text
-  // stays white on darker photos and switches to black on lighter photos.
-  const visual = document.querySelector('.hero-visual');
-  const slides = [...(visual?.querySelectorAll('.visual-slide') || [])];
-  const dots = [...(visual?.querySelectorAll('.visual-dot') || [])];
-  if (visual && slides.length > 1) {
-    let activeSlide = Math.max(0, slides.findIndex(slide => slide.classList.contains('is-active')));
-    let intervalId;
-    const showSlide = index => {
-      activeSlide = (index + slides.length) % slides.length;
-      slides.forEach((slide, i) => slide.classList.toggle('is-active', i === activeSlide));
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('is-active', i === activeSlide);
-        dot.setAttribute('aria-pressed', String(i === activeSlide));
-      });
-      visual.dataset.tone = slides[activeSlide].dataset.tone || 'dark';
-    };
-    const startSlideshow = () => {
-      if (intervalId) window.clearInterval(intervalId);
-      // Keep the requested 5-second rotation running even while the pointer is
-      // over the image; only pause while the browser tab is in the background.
-      if (!document.hidden) {
-        intervalId = window.setInterval(() => showSlide(activeSlide + 1), 5000);
-      }
-    };
-    dots.forEach((dot, i) => dot.addEventListener('click', () => {
-      showSlide(i);
-      startSlideshow();
-    }));
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) {
-        if (intervalId) window.clearInterval(intervalId);
-        intervalId = undefined;
-      } else {
-        startSlideshow();
-      }
-    });
-    showSlide(activeSlide);
-    startSlideshow();
-  }
-
   const form = document.querySelector('#application-form');
   const status = document.querySelector('#form-status');
   const submitButton = form?.querySelector('button[type="submit"]');

@@ -11,26 +11,3 @@
 .form-status.success { color: #32c878; }
 .form-status.error { color: #ff6b6b; }
 .submit-button:disabled { opacity: .7; cursor: wait; }
-
-
-/* Hero truck-photo slideshow: preserves the original angular window and overlays. */
-.hero-visual{isolation:isolate;background:#0b1018;--visual-text:#fff;--visual-subtext:#e1e4e8}
-.visual-slides{position:absolute;inset:0;z-index:-1;overflow:hidden}
-.visual-slide{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:contain;object-position:center;opacity:0;transform:none;transition:opacity 900ms ease}
-.visual-slide.is-active{opacity:1;transform:scale(1)}
-.visual-overlay{z-index:0;pointer-events:none;background:linear-gradient(0deg,rgba(4,7,12,.78),rgba(4,7,12,.06) 62%),linear-gradient(90deg,rgba(4,7,12,.22),transparent 72%)}
-.visual-label,.visual-number,.visual-pagination{z-index:2}
-.visual-label{color:var(--visual-text);text-shadow:0 1px 12px rgba(0,0,0,.3)}
-.visual-number{color:var(--visual-text);text-shadow:0 2px 16px rgba(0,0,0,.25)}
-.visual-number small{color:var(--visual-subtext)}
-.hero-visual[data-tone="light"]{--visual-text:#11151c;--visual-subtext:#242a32}
-.hero-visual[data-tone="light"] .visual-overlay{background:linear-gradient(0deg,rgba(255,255,255,.88),rgba(255,255,255,.12) 68%),linear-gradient(90deg,rgba(255,255,255,.42),transparent 78%)}
-.hero-visual[data-tone="light"] .visual-label,.hero-visual[data-tone="light"] .visual-number{ text-shadow:0 1px 10px rgba(255,255,255,.42)}
-.visual-pagination{position:absolute;right:25px;bottom:31px;display:flex;gap:8px;align-items:center}
-.visual-dot{width:8px;height:8px;padding:0;border:1px solid rgba(255,255,255,.85);border-radius:50%;background:rgba(255,255,255,.35);cursor:pointer;transition:width .2s ease,background .2s ease,border-color .2s ease}
-.visual-dot.is-active{width:22px;border-radius:6px;background:var(--red);border-color:var(--red)}
-.hero-visual[data-tone="light"] .visual-dot{border-color:rgba(15,20,28,.8);background:rgba(15,20,28,.2)}
-.hero-visual[data-tone="light"] .visual-dot.is-active{background:var(--red);border-color:var(--red)}
-.visual-dot:focus-visible{outline:2px solid var(--red);outline-offset:4px}
-@media(max-width:520px){.visual-pagination{right:17px;bottom:22px;gap:6px}.visual-dot{width:7px;height:7px}.visual-dot.is-active{width:18px}}
-@media(prefers-reduced-motion:reduce){.visual-slide{transition:none;transform:none}}
