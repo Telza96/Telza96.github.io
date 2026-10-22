@@ -13,6 +13,39 @@
   const year = document.querySelector('#year');
   if (year) year.textContent = new Date().getFullYear();
 
+  // Accessible hero photo slideshow. Tone is set per photo so the overlay text
+  // stays white on darker photos and switches to black on lighter photos.
+  const visual = document.querySelector('.hero-visual');
+  const slides = [...(visual?.querySelectorAll('.visual-slide') || [])];
+  const dots = [...(visual?.querySelectorAll('.visual-dot') || [])];
+  if (visual && slides.length > 1) {
+    let activeSlide = Math.max(0, slides.findIndex(slide => slide.classList.contains('is-active')));
+    let intervalId;
+    const showSlide = index => {
+      activeSlide = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => slide.classList.toggle('is-active', i === activeSlide));
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('is-active', i === activeSlide);
+        dot.setAttribute('aria-pressed', String(i === activeSlide));
+      });
+      visual.dataset.tone = slides[activeSlide].dataset.tone || 'dark';
+    };
+    const stopSlideshow = () => { if (intervalId) window.clearInterval(intervalId); };
+    const startSlideshow = () => {
+      stopSlideshow();
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        intervalId = window.setInterval(() => showSlide(activeSlide + 1), 5000);
+      }
+    };
+    dots.forEach((dot, i) => dot.addEventListener('click', () => { showSlide(i); startSlideshow(); }));
+    visual.addEventListener('mouseenter', stopSlideshow);
+    visual.addEventListener('mouseleave', startSlideshow);
+    visual.addEventListener('focusin', stopSlideshow);
+    visual.addEventListener('focusout', startSlideshow);
+    showSlide(activeSlide);
+    startSlideshow();
+  }
+
   const form = document.querySelector('#application-form');
   const status = document.querySelector('#form-status');
   const submitButton = form?.querySelector('button[type="submit"]');

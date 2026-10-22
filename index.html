@@ -43,11 +43,18 @@
           <div class="hero-actions"><a class="button button-red" href="#contact">Talk to our team <b>↗</b></a><a class="button button-outline" href="#services">Explore services <b>↓</b></a></div>
           <div class="hero-proof"><div class="proof-mark">NFC</div><div><strong>Nationwide Freight Carriers Inc.</strong><small>Focused on the road ahead.</small></div></div>
         </div>
-        <div class="hero-visual">
-          <div class="visual-overlay"></div><div class="visual-road"></div>
+        <div class="hero-visual" data-tone="dark" aria-label="Nationwide Freight Carriers truck photo slideshow">
+          <div class="visual-slides" aria-live="off">
+            <img class="visual-slide is-active" src="assets/nfc-truck-01.jpg" alt="NFC white semi-truck tractor parked with other trucks" data-tone="light" fetchpriority="high">
+            <img class="visual-slide" src="assets/nfc-truck-02.jpg" alt="NFC white semi-truck connected to a white freight trailer" data-tone="light" loading="lazy">
+          </div>
+          <div class="visual-overlay"></div>
           <div class="visual-label"><span></span> BUILT TO KEEP FREIGHT MOVING</div>
           <div class="visual-number">NFC <small>/ FREIGHT CARRIERS</small></div>
-          <div class="red-slash"></div>
+          <div class="visual-pagination" role="group" aria-label="Choose truck photo">
+            <button class="visual-dot is-active" type="button" aria-label="Show truck photo 1" aria-pressed="true"></button>
+            <button class="visual-dot" type="button" aria-label="Show truck photo 2" aria-pressed="false"></button>
+          </div>
         </div>
       </div>
       <div class="container hero-bottom"><span>LYNWOOD, ILLINOIS</span><i></i><span>MC 101389&nbsp; / &nbsp;USDOT 3144568</span></div>
