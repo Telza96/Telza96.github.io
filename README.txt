@@ -1,28 +1,23 @@
 NATIONWIDE FREIGHT CARRIERS INC. (NFC) — ONE-PAGE WEBSITE
 
-FILES
-- index.html       Website structure and content
-- styles.css       Responsive dark/red design
-- script.js        Mobile navigation and application form behavior
-- assets/nfc-logo.png  Company logo
+APPLICATION EMAIL DELIVERY
+The application form submits in the background through FormSubmit's AJAX endpoint to recruiting@drivenfc.com. Applicants do not need to open an email app.
 
-PREVIEW
-Open index.html in a browser.
+FIRST-TIME SETUP
+1. Publish the website.
+2. Submit one test application from the live website.
+3. Check recruiting@drivenfc.com for a FormSubmit activation/verification email and approve the receiving address.
+4. Submit another test application and confirm delivery.
+
+Until the receiving address is activated with FormSubmit, submissions may not be delivered. Check spam/junk if the verification email is not visible. FormSubmit is a third-party service; review its privacy practices and terms before sending applicant personal information.
 
 PUBLISHING
-Upload the complete folder contents to your web host's public web directory (often public_html).
-Keep the assets folder alongside index.html.
+Upload the complete folder contents to your web host's public web directory (often public_html). Keep the assets folder alongside index.html.
 
-APPLICATION EMAIL BEHAVIOR
-The Apply Now / Submit Application flow validates required fields and opens the visitor's default email app with the application addressed to recruiting@drivenfc.com. The visitor must press Send.
-A static HTML site cannot silently deliver email by itself. For automatic submission without opening an email app, connect a server-side form endpoint or a form service and configure it to deliver to recruiting@drivenfc.com. Do not put email passwords or private API keys in browser JavaScript.
-
-COMPANY DETAILS INCLUDED
+COMPANY DETAILS
 Nationwide Freight Carriers Inc.
 1787 E Joe Orr Rd, Lynwood, IL 60411
-847-385-3157
-info@drivenfc.com
-MC: 101389
-USDOT: 3144568
+847-385-3157 | info@drivenfc.com
+MC: 101389 | USDOT: 3144568
 
-The SMS consent checkbox is optional and unchecked by default. Have your legal/compliance team review the exact consent language before collecting SMS opt-ins.
+The SMS consent checkbox is optional and unchecked by default. Have legal/compliance review the consent language before collecting SMS opt-ins.

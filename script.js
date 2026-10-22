@@ -14,27 +14,54 @@
 
   const form = document.querySelector('#application-form');
   const status = document.querySelector('#form-status');
-  form.addEventListener('submit', event => {
+  const submitButton = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', async event => {
     event.preventDefault();
     if (!form.reportValidity()) return;
+
     const data = new FormData(form);
-    const fields = [
-      ['First name', data.get('firstName')],
-      ['Last name', data.get('lastName')],
-      ['Phone number', data.get('phone')],
-      ['Email address', data.get('email')],
-      ['City', data.get('city') || 'Not provided'],
-      ['State', data.get('state') || 'Not provided'],
-      ['Valid Class A CDL', data.get('cdl')],
-      ['Years of CDL Class A experience', data.get('experience') || 'Not specified'],
-      ['Preferred driving type', data.get('drivingType') || 'Not specified'],
-      ['SMS consent', data.get('smsConsent') ? 'Yes' : 'No'],
-      ['Optional message', data.get('message') || 'None']
-    ];
-    const body = fields.map(([label, value]) => `${label}: ${value}`).join('\n');
-    const subject = `NFC Driver Application - ${data.get('firstName')} ${data.get('lastName')}`;
-    const mailto = `mailto:recruiting@drivenfc.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    status.textContent = 'Opening your email app with the application details. Please review and press Send to submit it.';
-    window.location.href = mailto;
+    const payload = {
+      _subject: `NFC Driver Application - ${data.get('firstName')} ${data.get('lastName')}`,
+      _template: 'table',
+      'First name': data.get('firstName'),
+      'Last name': data.get('lastName'),
+      'Phone number': data.get('phone'),
+      'Email address': data.get('email'),
+      'City': data.get('city') || 'Not provided',
+      'State': data.get('state') || 'Not provided',
+      'Valid Class A CDL': data.get('cdl'),
+      'Years of CDL Class A experience': data.get('experience') || 'Not specified',
+      'Preferred driving type': data.get('drivingType') || 'Not specified',
+      'SMS consent': data.get('smsConsent') ? 'Yes' : 'No',
+      'Optional message': data.get('message') || 'None'
+    };
+
+    submitButton.disabled = true;
+    submitButton.dataset.originalText = submitButton.innerHTML;
+    submitButton.textContent = 'Sending application...';
+    status.className = 'form-status';
+    status.textContent = 'Submitting your application. Please wait.';
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/recruiting@drivenfc.com', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+        body: JSON.stringify(payload)
+      });
+      const result = await response.json();
+      if (!response.ok || result.success === 'false' || result.success === false) {
+        throw new Error(result.message || 'The application could not be submitted.');
+      }
+      status.textContent = 'Thank you! Your application has been submitted to our recruiting team.';
+      status.classList.add('success');
+      form.reset();
+    } catch (error) {
+      status.textContent = 'We could not submit your application right now. Please try again or email recruiting@drivenfc.com directly.';
+      status.classList.add('error');
+    } finally {
+      submitButton.disabled = false;
+      submitButton.innerHTML = submitButton.dataset.originalText || 'Submit application';
+    }
   });
 })();
