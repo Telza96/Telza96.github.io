@@ -16,7 +16,7 @@
 /* Hero truck-photo slideshow: preserves the original angular window and overlays. */
 .hero-visual{isolation:isolate;background:#0b1018;--visual-text:#fff;--visual-subtext:#e1e4e8}
 .visual-slides{position:absolute;inset:0;z-index:-1;overflow:hidden}
-.visual-slide{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:center;opacity:0;transform:scale(1.035);transition:opacity 900ms ease,transform 6s ease}
+.visual-slide{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:contain;object-position:center;opacity:0;transform:none;transition:opacity 900ms ease}
 .visual-slide.is-active{opacity:1;transform:scale(1)}
 .visual-overlay{z-index:0;pointer-events:none;background:linear-gradient(0deg,rgba(4,7,12,.78),rgba(4,7,12,.06) 62%),linear-gradient(90deg,rgba(4,7,12,.22),transparent 72%)}
 .visual-label,.visual-number,.visual-pagination{z-index:2}

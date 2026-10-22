@@ -30,18 +30,26 @@
       });
       visual.dataset.tone = slides[activeSlide].dataset.tone || 'dark';
     };
-    const stopSlideshow = () => { if (intervalId) window.clearInterval(intervalId); };
     const startSlideshow = () => {
-      stopSlideshow();
-      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      if (intervalId) window.clearInterval(intervalId);
+      // Keep the requested 5-second rotation running even while the pointer is
+      // over the image; only pause while the browser tab is in the background.
+      if (!document.hidden) {
         intervalId = window.setInterval(() => showSlide(activeSlide + 1), 5000);
       }
     };
-    dots.forEach((dot, i) => dot.addEventListener('click', () => { showSlide(i); startSlideshow(); }));
-    visual.addEventListener('mouseenter', stopSlideshow);
-    visual.addEventListener('mouseleave', startSlideshow);
-    visual.addEventListener('focusin', stopSlideshow);
-    visual.addEventListener('focusout', startSlideshow);
+    dots.forEach((dot, i) => dot.addEventListener('click', () => {
+      showSlide(i);
+      startSlideshow();
+    }));
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        if (intervalId) window.clearInterval(intervalId);
+        intervalId = undefined;
+      } else {
+        startSlideshow();
+      }
+    });
     showSlide(activeSlide);
     startSlideshow();
   }
