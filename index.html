@@ -10,9 +10,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png">
 </head>
 <body>
   <div class="topbar">
@@ -84,7 +81,9 @@
         <div class="apply-intro"><span class="section-label">04 / DRIVER OPPORTUNITIES</span><h2>TAKE THE<br><em>NEXT MILE.</em></h2><p>Interested in working with NFC? Tell us a little about yourself. It only takes a few minutes to get started.</p><div class="apply-note"><span>→</span><div><strong>Ready to apply?</strong><small>Complete the form and send your details to our recruiting team.</small></div></div></div>
         <div class="form-panel">
           <div class="form-heading"><div><span class="section-label">DRIVER APPLICATION</span><h3>LET’S GET STARTED.</h3></div><span class="required-note"><b>*</b> Required fields</span></div>
-          <form id="application-form">
+          <form id="application-form" action="https://formsubmit.app/f/f2rxe3bkrh" method="POST">
+            <input type="hidden" name="_subject" value="NFC Driver Application">
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px" value="">
             <div class="form-grid">
               <label>First name <b>*</b><input name="firstName" autocomplete="given-name" required></label>
               <label>Last name <b>*</b><input name="lastName" autocomplete="family-name" required></label>
@@ -99,6 +98,7 @@
               <div class="consent full-width"><label class="consent-check"><input type="checkbox" name="smsConsent" value="Yes"><span>I consent to receive conversational and informational SMS messages from Nationwide Freight Carriers Inc. regarding my inquiry, driver application, recruiting process, and related communications. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out or HELP for help. Consent is not a condition of submitting an application.</span></label><small>Optional. Leaving this unchecked will not affect your submission.</small></div>
             </div>
             <button class="button button-red submit-button" type="submit">Submit application <b>↗</b></button>
+            <p class="form-disclaimer">Your application will be sent securely to our recruiting team. We’ll contact you if there’s a potential fit.</p>
             <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
           </form>
         </div>
