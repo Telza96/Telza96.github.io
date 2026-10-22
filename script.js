@@ -24,6 +24,7 @@
     const payload = {
       _subject: `NFC Driver Application - ${data.get('firstName')} ${data.get('lastName')}`,
       _template: 'table',
+      _url: window.location.href,
       'First name': data.get('firstName'),
       'Last name': data.get('lastName'),
       'Phone number': data.get('phone'),
@@ -50,14 +51,16 @@
         body: JSON.stringify(payload)
       });
       const result = await response.json();
-      if (!response.ok || result.success === 'false' || result.success === false) {
-        throw new Error(result.message || 'The application could not be submitted.');
+      if (!response.ok || result.success !== 'true') {
+        throw new Error(result.message || `Submission failed (HTTP ${response.status}).`);
       }
       status.textContent = 'Thank you! Your application has been submitted to our recruiting team.';
       status.classList.add('success');
       form.reset();
     } catch (error) {
-      status.textContent = 'We could not submit your application right now. Please try again or email recruiting@drivenfc.com directly.';
+      console.error('NFC application submission failed:', error);
+      const detail = error && error.message ? error.message : 'Network or browser connection error.';
+      status.textContent = `Application was not sent: ${detail} If you opened this page as a local file, test from your published HTTPS website. Check recruiting@drivenfc.com for a FormSubmit activation email.`;
       status.classList.add('error');
     } finally {
       submitButton.disabled = false;

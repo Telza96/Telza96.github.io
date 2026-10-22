@@ -21,3 +21,9 @@ Nationwide Freight Carriers Inc.
 MC: 101389 | USDOT: 3144568
 
 The SMS consent checkbox is optional and unchecked by default. Have legal/compliance review the consent language before collecting SMS opt-ins.
+
+TROUBLESHOOTING UPDATE
+The form now displays the actual FormSubmit error instead of a generic message and includes the current page URL with the request. If you see an activation message, activate the inbox from the email. If it says the page must be opened through a web server, submit from the published HTTPS website rather than a local file.
+
+DEPLOYMENT NOTE
+The old static message about opening an email app has been removed. After replacing index.html and script.js on GitHub Pages, hard-refresh the site (Ctrl+F5). If submission fails, the form now displays the FormSubmit error response. Confirm recruiting@drivenfc.com with FormSubmit if prompted.
