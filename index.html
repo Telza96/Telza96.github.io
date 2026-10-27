@@ -43,11 +43,18 @@
           <div class="hero-actions"><a class="button button-red" href="#contact">Talk to our team <b>↗</b></a><a class="button button-outline" href="#services">Explore services <b>↓</b></a></div>
           <div class="hero-proof"><div class="proof-mark">NFC</div><div><strong>Nationwide Freight Carriers Inc.</strong><small>Focused on the road ahead.</small></div></div>
         </div>
-        <div class="hero-visual">
-          <div class="visual-overlay"></div><div class="visual-road"></div>
+        <div class="hero-visual" data-tone="dark" aria-label="Nationwide Freight Carriers truck photo slideshow">
+          <div class="visual-slides" aria-live="off">
+            <img class="visual-slide is-active" src="assets/nfc-truck-01.jpg" alt="NFC white semi-truck tractor parked with other trucks" data-tone="light" fetchpriority="high">
+            <img class="visual-slide" src="assets/nfc-truck-02.jpg" alt="NFC white semi-truck connected to a white freight trailer" data-tone="light" loading="lazy">
+          </div>
+          <div class="visual-overlay"></div>
           <div class="visual-label"><span></span> BUILT TO KEEP FREIGHT MOVING</div>
           <div class="visual-number">NFC <small>/ FREIGHT CARRIERS</small></div>
-          <div class="red-slash"></div>
+          <div class="visual-pagination" role="group" aria-label="Choose truck photo">
+            <button class="visual-dot is-active" type="button" aria-label="Show truck photo 1" aria-pressed="true"></button>
+            <button class="visual-dot" type="button" aria-label="Show truck photo 2" aria-pressed="false"></button>
+          </div>
         </div>
       </div>
       <div class="container hero-bottom"><span>LYNWOOD, ILLINOIS</span><i></i><span>MC 101389&nbsp; / &nbsp;USDOT 3144568</span></div>
@@ -98,7 +105,7 @@
               <label>Years of CDL Class A experience<select name="experience"><option value="">Select...</option><option>Not yet licensed</option><option>Less than 1 year</option><option>1–2 years</option><option>3–5 years</option><option>6–10 years</option><option>10+ years</option></select></label>
               <label>Preferred driving type<select name="drivingType"><option value="">Select...</option><option>OTR</option><option>Regional</option><option>Local</option><option>Team driving</option><option>Open to options</option></select></label>
               <label class="full-width">Optional message<textarea name="message" rows="4" placeholder="Tell us anything else you’d like our recruiting team to know..."></textarea></label>
-              <div class="consent full-width"><label class="consent-check"><input type="checkbox" name="smsConsent" value="Yes"><span>I consent to receive conversational and informational SMS messages from Nationwide Freight Carriers Inc. regarding my inquiry, driver application, recruiting process, and related communications. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out or HELP for help. Consent is not a condition of submitting an application.</span></label><small>Optional. Leaving this unchecked will not affect your submission.</small></div>
+              <div class="consent full-width"><label class="consent-check"><input type="checkbox" name="smsConsent" value="Yes"><span>I agree to receive SMS messages from Nationwide Freight Carriers Inc. (NFC) regarding load status updates, dispatch coordination, pickup and delivery scheduling, shipment-related notifications, and responses to business inquiries. Message frequency varies. Message and data rates may apply. Reply HELP for help or STOP to opt out. Consent is not a condition of purchase or submitting this form. See our <a href="privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</span></label><small>Optional. This box is unchecked by default. Leaving it unchecked will not affect your submission.</small></div>
             </div>
             <button class="button button-red submit-button" type="submit">Submit application <b>↗</b></button>
             <p class="form-disclaimer">Your application will be sent securely to our recruiting team. We’ll contact you if there’s a potential fit.</p>
