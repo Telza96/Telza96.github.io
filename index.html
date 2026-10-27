@@ -105,7 +105,7 @@
               <label>Years of CDL Class A experience<select name="experience"><option value="">Select...</option><option>Not yet licensed</option><option>Less than 1 year</option><option>1–2 years</option><option>3–5 years</option><option>6–10 years</option><option>10+ years</option></select></label>
               <label>Preferred driving type<select name="drivingType"><option value="">Select...</option><option>OTR</option><option>Regional</option><option>Local</option><option>Team driving</option><option>Open to options</option></select></label>
               <label class="full-width">Optional message<textarea name="message" rows="4" placeholder="Tell us anything else you’d like our recruiting team to know..."></textarea></label>
-              <div class="consent full-width"><label class="consent-check"><input type="checkbox" name="smsConsent" value="Yes"><span>I agree to receive informational and conversational SMS messages from Nationwide Freight Carriers Inc. (NFC), including freight/load and shipment status updates, dispatch coordination, pickup and delivery scheduling, responses to customer, broker, shipper, and other business inquiries, and (where relevant to my application) driver application or onboarding updates. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out; reply HELP for help. Consent is not a condition of purchase or submitting this form. See our <a href="privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and <a href="sms-terms.html" target="_blank" rel="noopener noreferrer">SMS Terms</a>.</span></label><small>Optional. This box is unchecked by default. Leaving it unchecked will not affect your submission.</small></div>
+              <div class="consent full-width"><label class="consent-check"><input type="checkbox" name="smsConsent" value="Yes"><span>I agree to receive informational SMS messages from Nationwide Freight Carriers Inc. (NFC) about my driver application, application status, recruiting, and onboarding. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out; reply HELP for help. Consent is not a condition of applying for employment or submitting this form. See our <a href="privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and <a href="sms-terms.html" target="_blank" rel="noopener noreferrer">SMS Terms</a>.</span></label><small>Optional. This box is unchecked by default. Leaving it unchecked will not affect your submission.</small></div>
             </div>
             <button class="button button-red submit-button" type="submit">Submit application <b>↗</b></button>
             <p class="form-disclaimer">Your application will be sent securely to our recruiting team. We’ll contact you if there’s a potential fit.</p>
@@ -115,7 +115,25 @@
       </div>
     </section>
 
-    <section class="contact-section" id="contact"><div class="container contact-inner"><div><span class="section-label">05 / CONTACT NFC</span><h2>LET’S MOVE<br><em>SOMETHING FORWARD.</em></h2></div><div class="contact-details"><a href="tel:+18473853157"><small>CALL OUR TEAM</small><strong>847-385-3157</strong></a><a href="mailto:info@drivenfc.com"><small>GENERAL INQUIRIES</small><strong>info@drivenfc.com</strong></a><div><small>VISIT US</small><strong>1787 E Joe Orr Rd<br>Lynwood, IL 60411</strong></div></div></div></section>
+    <section class="contact-section" id="contact"><div class="container"><div class="contact-inner"><div><span class="section-label">05 / CONTACT NFC</span><h2>LET’S MOVE<br><em>SOMETHING FORWARD.</em></h2></div><div class="contact-details"><a href="tel:+18473853157"><small>CALL OUR TEAM</small><strong>847-385-3157</strong></a><a href="mailto:info@drivenfc.com"><small>GENERAL INQUIRIES</small><strong>info@drivenfc.com</strong></a><div><small>VISIT US</small><strong>1787 E Joe Orr Rd<br>Lynwood, IL 60411</strong></div></div></div>
+      <div class="contact-inquiry form-panel"><div class="form-heading"><div><span class="section-label">BROKER & CUSTOMER INQUIRIES</span><h3>HOW CAN WE HELP?</h3></div><span class="required-note">* Required fields</span></div>
+        <form id="business-inquiry-form" action="https://formsubmit.co/info@drivenfc.com" method="POST">
+          <input type="hidden" name="_subject" value="NFC Broker / Customer Inquiry">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px" value="">
+          <div class="form-grid">
+            <label>Name <b>*</b><input name="name" autocomplete="name" required></label>
+            <label>Company <input name="company" autocomplete="organization"></label>
+            <label>Phone number <b>*</b><input name="phone" type="tel" autocomplete="tel" required></label>
+            <label>Email address <b>*</b><input name="email" type="email" autocomplete="email" required></label>
+            <label class="full-width">How can we help? <textarea name="inquiry" rows="4" placeholder="Freight, load, pickup, delivery or other business inquiry" required></textarea></label>
+            <div class="consent full-width"><label class="consent-check"><input type="checkbox" name="smsConsent" value="Yes"><span>I agree to receive informational and conversational SMS messages from Nationwide Freight Carriers Inc. (NFC) about freight inquiries, load status updates, dispatch coordination, pickup and delivery scheduling, and shipment-related notifications. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out or HELP for help. Consent is not a condition of purchase or service. See our <a href="privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and <a href="sms-terms.html" target="_blank" rel="noopener noreferrer">SMS Terms</a>.</span></label><small>Optional. Unchecked by default. You can submit this inquiry without agreeing to SMS.</small></div>
+          </div>
+          <button class="button button-red submit-button" type="submit">Send inquiry <b>↗</b></button>
+          <p class="form-disclaimer">Submitting this inquiry does not subscribe you to SMS unless you separately select the optional checkbox.</p>
+        </form>
+      </div>
+    </div></section>
   </main>
   <footer class="footer"><div class="container footer-main"><a class="footer-brand" href="#home"><img src="assets/nfc-logo.png" alt="NFC logo"></a><p>Nationwide Freight Carriers Inc.<br>Freight moving forward.</p><div class="footer-ids"><span>MC 101389</span><span>USDOT 3144568</span></div><a class="back-top" href="#home">BACK TO TOP ↑</a></div><div class="container footer-bottom"><span>© <span id="year"></span> Nationwide Freight Carriers Inc. All rights reserved.</span><span>Lynwood, Illinois</span><a href="privacy-policy.html">Privacy Policy</a><a href="sms-terms.html">SMS Terms</a></div></footer>
   <script src="script.js"></script>

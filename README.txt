@@ -37,3 +37,12 @@ Temporary photo credits / licenses:
 - A VOLVO truck tractor with a semi-trailer on the road in Levoča, Slovakia.jpg — Oto Zapletal via Wikimedia Commons, CC BY-SA 4.0: https://commons.wikimedia.org/wiki/File:A_VOLVO_truck_tractor_with_a_semi-trailer_on_the_road_in_Levo%C4%8Da,_Slovakia.jpg
 - Colorful Semi-Trucks.jpg — Thank You (21 Millions+) views via Wikimedia Commons, CC BY 2.0: https://commons.wikimedia.org/wiki/File:Colorful_Semi-Trucks.jpg
 These are temporary preview photos and do not represent NFC-owned trucks.
+
+
+RINGCENTRAL SMS COMPLIANCE UPDATE (October 27, 2026)
+- Driver application checkbox now covers driver recruiting, application status, and onboarding only.
+- Added a separate broker/customer inquiry form with its own optional, unchecked SMS consent checkbox for freight/load, dispatch, pickup/delivery, and shipment messages.
+- Privacy Policy documents both website opt-in paths. SMS Terms distinguish the two audiences.
+- Both consent boxes link directly to Privacy Policy and SMS Terms. Footer links remain on all pages.
+- Broker/customer form posts to FormSubmit.co at info@drivenfc.com. Before relying on this form in production, complete any FormSubmit email activation/verification prompt and test delivery. The driver application form retains its existing configured endpoint.
+- Website updates do not configure RingCentral keyword automations; confirm HELP/STOP/opt-in confirmation responses in the RingCentral portal and use matching CTA/sample messages in the campaign submission.

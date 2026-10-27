@@ -34,3 +34,6 @@
 .visual-dot:focus-visible{outline:2px solid var(--red);outline-offset:4px}
 @media(max-width:520px){.visual-pagination{right:17px;bottom:22px;gap:6px}.visual-dot{width:7px;height:7px}.visual-dot.is-active{width:18px}}
 @media(prefers-reduced-motion:reduce){.visual-slide{transition:none;transform:none;filter:none}}
+
+/* Separate broker/customer inquiry form for SMS consent capture */
+.contact-inquiry{max-width:900px;margin:48px auto 0}.contact-inquiry .form-heading{align-items:center}.contact-inquiry .form-grid .full-width{grid-column:1 / -1}@media(max-width:760px){.contact-inquiry{margin-top:32px;padding:22px}.contact-inquiry .form-heading{align-items:flex-start;flex-direction:column}}
